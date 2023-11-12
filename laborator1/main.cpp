@@ -114,8 +114,110 @@ void doEx3() {
 
 }
 
+// 4.   Definiți o structură Student care să permită memorarea numelui, notelor, mediei și grupei corespunzătoare unui student.
+//Scrieți o funcție care să calculeze mediile celor n studenți ale căror date sunt memorate într-un tablou unidimensional t cu elemente de tip Student.
+// Folosind funcția qsort din biblioteca stdlib.h, sortați elementele unui tablou unidimensional t format din n elemente de tip Student
+// în ordinea descrescătoare a mediilor, iar în cazul unor medii egale studenții respectivi se vor ordona alfabetic.
+// Implementați funcția comparator corespunzătoare și scrieți apelul funcției qsort.
+
+class Student {
+    string nume;
+    int grupa, nrNote;
+    float media;
+    int note[];
+public:
+    const string &getNume() const {
+        return nume;
+    }
+
+    int getNrNote() const {
+        return nrNote;
+    }
+
+    void setNrNote(int nrNote) {
+        Student::nrNote = nrNote;
+    }
+
+    void setNume(const string &nume) {
+        Student::nume = nume;
+    }
+
+    int getGrupa() const {
+        return grupa;
+    }
+
+    void setGrupa(int grupa) {
+        Student::grupa = grupa;
+    }
+
+    float getMedia() const {
+        return media;
+    }
+
+    void setMedia(float media) {
+        Student::media = media;
+    }
+
+    const int *getNote() const {
+        return note;
+    }
+
+    void *setNote(int note[]) {
+        int nrNote = Student::getNrNote(), suma = 0;
+        for (int i = 0; i < nrNote; ++i) {
+            Student::note[i] = note[i];
+            suma += note[i];
+        }
+        float media = suma * 1.0 / nrNote * 1.0;
+        Student::setMedia(media);
+    }
+};
+
 void doEx4() {
 
+    int n;
+    cout << "Introduceti numarul de studenti: ";
+    cin >> n;
+    Student t[n + 1];
+
+    for (int i = 0; i < n; i++) {
+        string nume;
+        int grupa, nrNote;
+
+        cout << "\n---  STUDENT " << (i + 1) << " ---\n";
+
+        cin.ignore(1); // Removes last \n from buffer (cin leaves a new line character)
+
+        cout << "Introduceti nume student: ";
+        getline(cin, nume);
+
+        cout << "Introduceti nr de note: ";
+        cin >> nrNote;
+        int note[nrNote + 1];
+
+        cout << "Introduceti notele (" << nrNote << "): ";
+        for (int j = 0; j < nrNote; ++j) {
+            int nota;
+            cin >> nota;
+            note[j] = nota;
+        }
+
+        cout << "Introduceti grupa: ";
+        cin >> grupa;
+
+        t[i].setNume(nume);
+        t[i].setGrupa(grupa);
+        t[i].setNrNote(nrNote);
+        t[i].setNote(note);
+
+    }
+
+    cout<< "--- MEDII STUDENTI: ---";
+    for (int i = 0; i < n; ++i) {
+        cout << "STUDENT: " << t[i].getNume() << " | MEDIA" << t[i].getMedia() << endl;
+
+    }
+    cout<< "------------------";
 }
 
 int main() {
