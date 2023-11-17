@@ -1,0 +1,3 @@
+/home/eva/CLionProjects/POO/puncte/cmake-build-debug/CMakeFiles/puncte.dir
+/home/eva/CLionProjects/POO/puncte/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/eva/CLionProjects/POO/puncte/cmake-build-debug/CMakeFiles/rebuild_cache.dir
