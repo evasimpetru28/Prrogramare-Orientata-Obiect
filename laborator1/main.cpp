@@ -17,13 +17,36 @@ void doEx1() {
 void doEx2() {
     int nr;
 
-    cout << "Introduceti un nr (max 4 cifre)";
+    cout << "Introduceti un nr (max 4 cifre):";
     cin >> nr;
 
     if (nr < 0 || nr > 9999) {
         exit(1);
     } else {
 
+        int **matrix = new int *[nr];
+        int *coloane = new int[nr];
+
+        for (int r = 0; r < nr; r++) {
+            coloane[r] = r + 1;
+            matrix[r] = new int[coloane[r]];
+
+            for (int j = 0; j < coloane[r]; j++) {
+                matrix[r][j] = j + 1;
+            }
+        }
+
+        for (int i = 0; i < nr; i++) {
+            for (int j = 0; j < coloane[i]; j++) {
+                cout << matrix[i][j] << " ";
+            }
+            cout << endl;
+        }
+
+        for (int i = 0; i < nr; ++i)
+            delete[] matrix[i];
+        delete[]matrix;
+        delete[]coloane;
     }
 }
 
