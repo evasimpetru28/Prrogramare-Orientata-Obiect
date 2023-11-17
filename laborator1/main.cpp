@@ -1,5 +1,7 @@
 #include <iostream>
 #include <bits/stdc++.h>
+#include "Curs.h"
+#include "Student.h"
 
 using namespace std;
 
@@ -29,44 +31,17 @@ void doEx2() {
 // corespunzător. Directorul dorește să printeze o listă cu aceste cursuri sortate crescător după ora
 // de început. Scrieți un program care să il ajute pe directorul departamentului de training.
 
-class Curs {
-    string numeCurs;
-    string oraInceput;
-    string oraSfarsit;
-
-public:
-    const string &getNumeCurs() const {
-        return numeCurs;
-    }
-
-    void setNumeCurs(const string &numeCurs) {
-        Curs::numeCurs = numeCurs;
-    }
-
-    const string &getOraInceput() const {
-        return oraInceput;
-    }
-
-    void setOraInceput(const string &oraInceput) {
-        Curs::oraInceput = oraInceput;
-    }
-
-    const string &getOraSfarsit() const {
-        return oraSfarsit;
-    }
-
-    void setOraSfarsit(const string &oraSfarsit) {
-        Curs::oraSfarsit = oraSfarsit;
-    }
-
-};
 
 bool comparaCursuri(Curs a, Curs b) {
     int cmp = a.getOraInceput().compare(b.getOraInceput());
     if (cmp == 0) {
-        return a.getOraSfarsit().compare(b.getOraSfarsit());
+        int cmp2 = a.getOraSfarsit().compare(b.getOraSfarsit());
+        if (cmp2 == 0) {
+            return a.getNumeCurs().compare(b.getNumeCurs());
+        }
+        return cmp2 == -1;
     } else {
-        return cmp;
+        return cmp == -1;
     }
 }
 
@@ -114,74 +89,22 @@ void doEx3() {
 
 }
 
-// 4.   Definiți o structură Student care să permită memorarea numelui, notelor, mediei și grupei corespunzătoare unui student.
-//Scrieți o funcție care să calculeze mediile celor n studenți ale căror date sunt memorate într-un tablou unidimensional t cu elemente de tip Student.
-// Folosind funcția qsort din biblioteca stdlib.h, sortați elementele unui tablou unidimensional t format din n elemente de tip Student
+// 4.   Definiți o structură Curs care să permită memorarea numelui, notelor, mediei și grupei corespunzătoare unui student.
+//Scrieți o funcție care să calculeze mediile celor n studenți ale căror date sunt memorate într-un tablou unidimensional t cu elemente de tip Curs.
+// Folosind funcția qsort din biblioteca stdlib.h, sortați elementele unui tablou unidimensional t format din n elemente de tip Curs
 // în ordinea descrescătoare a mediilor, iar în cazul unor medii egale studenții respectivi se vor ordona alfabetic.
 // Implementați funcția comparator corespunzătoare și scrieți apelul funcției qsort.
 
-class Student {
-    string nume;
-    int grupa, nrNote;
-    float media;
-    int note[];
-public:
-    const string &getNume() const {
-        return nume;
-    }
-
-    int getNrNote() const {
-        return nrNote;
-    }
-
-    void setNrNote(int nrNote) {
-        Student::nrNote = nrNote;
-    }
-
-    void setNume(const string &nume) {
-        Student::nume = nume;
-    }
-
-    int getGrupa() const {
-        return grupa;
-    }
-
-    void setGrupa(int grupa) {
-        Student::grupa = grupa;
-    }
-
-    float getMedia() const {
-        return media;
-    }
-
-    void setMedia(float media) {
-        Student::media = media;
-    }
-
-    const int *getNote() const {
-        return note;
-    }
-
-    void *setNote(int note[]) {
-        int nrNote = Student::getNrNote(), suma = 0;
-        for (int i = 0; i < nrNote; ++i) {
-            Student::note[i] = note[i];
-            suma += note[i];
-        }
-        float media = suma * 1.0 / nrNote * 1.0;
-        Student::setMedia(media);
-    }
-};
 
 void doEx4() {
 
     int n;
     cout << "Introduceti numarul de studenti: ";
     cin >> n;
-    Student t[n + 1];
+    Student studenti[n];
 
     for (int i = 0; i < n; i++) {
-        string nume;
+        char nume[30];
         int grupa, nrNote;
 
         cout << "\n---  STUDENT " << (i + 1) << " ---\n";
@@ -189,11 +112,11 @@ void doEx4() {
         cin.ignore(1); // Removes last \n from buffer (cin leaves a new line character)
 
         cout << "Introduceti nume student: ";
-        getline(cin, nume);
+        cin.get(nume, 30);
 
         cout << "Introduceti nr de note: ";
         cin >> nrNote;
-        int note[nrNote + 1];
+        int note[nrNote];
 
         cout << "Introduceti notele (" << nrNote << "): ";
         for (int j = 0; j < nrNote; ++j) {
@@ -205,19 +128,22 @@ void doEx4() {
         cout << "Introduceti grupa: ";
         cin >> grupa;
 
-        t[i].setNume(nume);
-        t[i].setGrupa(grupa);
-        t[i].setNrNote(nrNote);
-        t[i].setNote(note);
+//        Student s(nume, grupa, nrNote, note);
+        studenti[i].setNume(nume);
+        studenti[i].setGrupa(grupa);
+        studenti[i].setNrNote(nrNote);
+        studenti[i].setNote(note);
+//
+        cout << "--------------------\n";
+        studenti[i].afisare();
 
     }
 
-    cout<< "--- MEDII STUDENTI: ---";
+    cout << "\n--- MEDII STUDENTI: ---\n";
     for (int i = 0; i < n; ++i) {
-        cout << "STUDENT: " << t[i].getNume() << " | MEDIA" << t[i].getMedia() << endl;
-
+        cout << "STUDENT: " << studenti[i].getNume() << " | MEDIA " << studenti[i].getMedia() << endl;
     }
-    cout<< "------------------";
+    cout << "-----------------------'\n";
 }
 
 int main() {
