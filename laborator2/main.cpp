@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Punct.h"
 #include "Complex.h"
+#include "Angajat.h"
 
 using namespace std;
 
@@ -52,12 +53,23 @@ void doEx2() {
 }
 
 void doEx3() {
+    cout << "--------------------------------------------------\n";
+    Angajat a1("Diaconu Alex", 5400.29, 19);
+    a1.afisare();
+    cout << "Salariu net: " << a1.salariuNet() << endl;
+
+    cout << "--------------------------------------------------\n";
+
+    Angajat a2("Ionescu Delia", 7905.2, 27);
+    a2.afisare();
+    cout << "Salariu net: " << a2.salariuNet() << endl;
+    cout << "--------------------------------------------------\n";
 
 }
 
 int main() {
 
-    cout << "Alege exercitiu: (1-4)\n";
+    cout << "Alege exercitiu: (1-3)\n";
 
     int ex;
     cin >> ex;

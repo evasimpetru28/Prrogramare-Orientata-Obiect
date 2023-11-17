@@ -1,7 +1,3 @@
-//
-// Created by eva on 11/17/23.
-//
-
 #ifndef LABORATOR1_STUDENT_H
 #define LABORATOR1_STUDENT_H
 

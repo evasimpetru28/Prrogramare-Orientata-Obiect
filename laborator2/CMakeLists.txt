@@ -7,4 +7,6 @@ add_executable(laborator2 main.cpp
         Punct.cpp
         Punct.h
         Complex.cpp
-        Complex.h)
+        Complex.h
+        Angajat.cpp
+        Angajat.h)

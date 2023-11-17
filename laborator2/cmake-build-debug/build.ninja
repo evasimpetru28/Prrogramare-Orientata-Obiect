@@ -67,6 +67,12 @@ build CMakeFiles/laborator2.dir/Complex.cpp.o: CXX_COMPILER__laborator2_unscanne
   OBJECT_DIR = CMakeFiles/laborator2.dir
   OBJECT_FILE_DIR = CMakeFiles/laborator2.dir
 
+build CMakeFiles/laborator2.dir/Angajat.cpp.o: CXX_COMPILER__laborator2_unscanned_Debug /home/eva/CLionProjects/POO/laborator2/Angajat.cpp || cmake_object_order_depends_target_laborator2
+  DEP_FILE = CMakeFiles/laborator2.dir/Angajat.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/laborator2.dir
+  OBJECT_FILE_DIR = CMakeFiles/laborator2.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target laborator2
@@ -75,7 +81,7 @@ build CMakeFiles/laborator2.dir/Complex.cpp.o: CXX_COMPILER__laborator2_unscanne
 #############################################
 # Link the executable laborator2
 
-build laborator2: CXX_EXECUTABLE_LINKER__laborator2_Debug CMakeFiles/laborator2.dir/main.cpp.o CMakeFiles/laborator2.dir/Punct.cpp.o CMakeFiles/laborator2.dir/Complex.cpp.o
+build laborator2: CXX_EXECUTABLE_LINKER__laborator2_Debug CMakeFiles/laborator2.dir/main.cpp.o CMakeFiles/laborator2.dir/Punct.cpp.o CMakeFiles/laborator2.dir/Complex.cpp.o CMakeFiles/laborator2.dir/Angajat.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/laborator2.dir
   POST_BUILD = :

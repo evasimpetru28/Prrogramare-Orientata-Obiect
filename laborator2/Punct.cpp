@@ -1,7 +1,3 @@
-//
-// Created by eva on 11/17/23.
-//
-
 #include "Punct.h"
 #include <iostream>
 #include <math.h>

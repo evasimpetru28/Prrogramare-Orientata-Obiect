@@ -1,7 +1,3 @@
-//
-// Created by eva on 11/17/23.
-//
-
 #include "Student.h"
 #include <string.h>
 
@@ -86,7 +82,7 @@ int *Student::getNote() {
 
 void Student::setNote(int note[]) {
     int nrNote = this->getNrNote(), suma = 0;
-    this->note = new int[nrNote +1];
+    this->note = new int[nrNote + 1];
     for (int i = 0; i < nrNote; ++i) {
         this->note[i] = note[i];
         suma += note[i];

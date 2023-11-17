@@ -1,7 +1,3 @@
-//
-// Created by eva on 11/17/23.
-//
-
 #include "Curs.h"
 #include <iostream>
 

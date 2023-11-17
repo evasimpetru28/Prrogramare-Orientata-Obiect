@@ -1,7 +1,3 @@
-//
-// Created by eva on 11/17/23.
-//
-
 #ifndef LABORATOR2_PUNCT_H
 #define LABORATOR2_PUNCT_H
 
