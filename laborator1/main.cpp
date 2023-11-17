@@ -5,11 +5,60 @@
 
 using namespace std;
 
+// 1.   Se citește un vector cu n numere întregi (n>=2). Să se aloce dinamic doi vectori care să
+// conțină elementele pozitive din vector, respectiv pe cele negative.
+
 void doEx1() {
 
+    int n, nrPozitive = 0, nrNegative = 0;
+    cout << "Introduceti nr: ";
+    cin >> n;
+
+    if (n < 2) {
+        exit(1);
+    } else {
+        cout << "Introduceti cele " << n << " nr:\n";
+        int *vect = new int[n];
+        for (int i = 0; i < n; ++i) {
+            cin >> vect[i];
+            if (vect[i] > 0) {
+                nrPozitive++;
+            } else if (vect[i] < 0) {
+                nrNegative++;
+            }
+        }
+
+        int *vectorPozitive = new int[nrPozitive];
+        int *vectorNegative = new int[nrNegative];
+
+        int idxPozitiv = 0, idxNegativ = 0;
+        for (int i = 0; i < n; i++) {
+            if (vect[i] > 0) {
+                vectorPozitive[idxPozitiv++] = vect[i];
+            } else if (vect[i] < 0) {
+                vectorNegative[idxNegativ++] = vect[i];
+            }
+        }
+        cout << "\n------------------------------------------------\n";
+        cout << "Elementele pozitive: ";
+        for (int i = 0; i < nrPozitive; i++) {
+            cout << vectorPozitive[i] << " ";
+        }
+        cout << endl << endl;
+
+        cout << "Elementele negative: ";
+        for (int i = 0; i < nrNegative; i++) {
+            cout << vectorNegative[i] << " ";
+        }
+        cout << "\n------------------------------------------------\n";
+
+        delete[]vect;
+        delete[]vectorPozitive;
+        delete[]vectorNegative;
+    }
 }
 
-// 2.  Scrieți un program C++ care citește de la tastatură un număr natural format din cel mult patru cifre,
+// 2.   Scrieți un program C++ care citește de la tastatură un număr natural format din cel mult patru cifre,
 // construiește în memorie un tablou bidimensional neregulat cu elemente întregi de forma indicată mai
 // jos și apoi afișează pe ecran tabloul obținut
 
@@ -151,12 +200,11 @@ void doEx4() {
         cout << "Introduceti grupa: ";
         cin >> grupa;
 
-//        Student s(nume, grupa, nrNote, note);
         studenti[i].setNume(nume);
         studenti[i].setGrupa(grupa);
         studenti[i].setNrNote(nrNote);
         studenti[i].setNote(note);
-//
+
         cout << "--------------------\n";
         studenti[i].afisare();
 
