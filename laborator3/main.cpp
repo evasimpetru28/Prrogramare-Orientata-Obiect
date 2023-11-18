@@ -1,8 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <string.h>
 #include "Automobil.h"
 
 using namespace std;
+
 
 class Persoana {
     int varsta; // int
@@ -59,15 +61,30 @@ void f(Persoana ob) {
 }
 
 void doEx1() {
-    Automobil automobil;
-    automobil.afisare();
-    Automobil automobil2("Audi", 1500, 4500.);
-    automobil2.afisare();
+    ifstream fin("automobile.in");
 
-    Automobil ta[5];
-    for (int i = 0; i < 5; ++i) {
+    int nr;
+    fin >> nr;
+    cout << "Lines nr: " << nr << endl;
+
+    Automobil ta[nr];
+
+    char marca[100];
+    int capacitate;
+    double pret;
+    int i = 0;
+
+    while (fin >> marca >> capacitate >> pret) {
+
+        ta[i].setMarca(marca);
+        ta[i].setCapacitate(capacitate);
+        ta[i].setPret(pret);
+
         ta[i].afisare();
+        i++;
     }
+
+    fin.close();
 }
 
 void doEx2() {
