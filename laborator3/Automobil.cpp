@@ -11,6 +11,7 @@ using namespace std;
 // initializare date membre statice:
 int Automobil::TVA = 19;
 int Automobil::count = 0;
+int Automobil::countByPriceLessThan = 0;
 
 Automobil::Automobil() {
     this->marca = new char[4];
@@ -86,4 +87,14 @@ double Automobil::getTVAPret() {
 
 int Automobil::getCount() {
     return count;
+}
+
+int Automobil::getCountByPriceLessThan() {
+    return Automobil::countByPriceLessThan;
+}
+
+void Automobil::numara(Automobil automobil, double pret) {
+    if (automobil.pret < pret) {
+        Automobil::countByPriceLessThan++;
+    }
 }

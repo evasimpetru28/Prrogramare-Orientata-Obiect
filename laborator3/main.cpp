@@ -71,6 +71,10 @@ void doEx1() {
     fin >> nr;
     cout << "Lines nr: " << nr << endl;
 
+    int priceLessThan;
+    cout << "Price less than: ";
+    cin >> priceLessThan;
+
     Automobil ta[nr];
 
     char marca[100];
@@ -83,14 +87,17 @@ void doEx1() {
         ta[i].setMarca(marca);
         ta[i].setCapacitate(capacitate);
         ta[i].setPret(pret);
+        Automobil::numara(ta[i], priceLessThan);
 
         i++;
     }
     fin.close();
 
+
     for (int i = 0; i < nr; i++) {
         ta[i].afisare();
     }
+    cout << "Numar automobile cu pret mai mic decat " << priceLessThan << ": " << Automobil::getCountByPriceLessThan() << endl;
 
     ofstream fout("pretTVA.csv");
     if (!fout) {
@@ -107,8 +114,8 @@ void doEx1() {
     cout << "Numarul de automobile: " << Automobil::getCount() << endl;
 
     {
-     Automobil automobil;
-     cout << "Numarul de automobile: " << Automobil::getCount() << endl;
+        Automobil automobil;
+        cout << "Numarul de automobile: " << Automobil::getCount() << endl;
     }
     cout << "Numarul de automobile: " << Automobil::getCount() << endl;
 

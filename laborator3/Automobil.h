@@ -12,6 +12,7 @@ class Automobil {
     double pret;
     static int TVA;
     static int count;
+    static int countByPriceLessThan;
 public:
     Automobil();
 
@@ -38,6 +39,14 @@ public:
     double getTVAPret();
 
     static int getCount();
+
+//    VARIANTA 1:
+    static int getCountByPriceLessThan();
+    static void numara(Automobil automobil, double pret);
+
+//    VARIANTA 2:
+//    static int getCountByPriceLessThan(Automobil automobileList[], double pret);
+
 };
 
 
