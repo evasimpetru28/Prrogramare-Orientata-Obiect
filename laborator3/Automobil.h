@@ -10,6 +10,8 @@ class Automobil {
     char *marca;
     int capacitate;
     double pret;
+    static int TVA;
+    static int count;
 public:
     Automobil();
 
@@ -32,6 +34,10 @@ public:
     double getPret();
 
     void setPret(double pret);
+
+    double getTVAPret();
+
+    static int getCount();
 };
 
 

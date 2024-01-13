@@ -8,12 +8,17 @@
 
 using namespace std;
 
+// initializare date membre statice:
+int Automobil::TVA = 19;
+int Automobil::count = 0;
+
 Automobil::Automobil() {
     this->marca = new char[4];
     strcpy(this->marca, "###");
     this->capacitate = 0;
     this->pret = 0.0;
-    cout << "Constructor fara args"<<endl;
+    Automobil::count++;
+    cout << "Constructor fara args" << endl;
 }
 
 Automobil::Automobil(char *marca, int capacitate, double pret) {
@@ -21,7 +26,8 @@ Automobil::Automobil(char *marca, int capacitate, double pret) {
     strcpy(this->marca, marca);
     this->capacitate = capacitate;
     this->pret = pret;
-    cout << "Constructor cu args"<<endl;
+    Automobil::count++;
+    cout << "Constructor cu args" << endl;
 }
 
 Automobil::Automobil(const Automobil &ob) {
@@ -29,14 +35,16 @@ Automobil::Automobil(const Automobil &ob) {
     strcpy(this->marca, ob.marca);
     this->capacitate = ob.capacitate;
     this->pret = ob.pret;
-    cout << "Constructor copiere"<<endl;
+    Automobil::count++;
+    cout << "Constructor copiere" << endl;
 }
 
 Automobil::~Automobil() {
     if (this->marca) {
-        delete[]marca;
+        delete[] this->marca;
     }
-    cout << "Destructor"<<endl;
+    Automobil::count--;
+    cout << "Destructor" << endl;
 }
 
 void Automobil::afisare() {
@@ -44,12 +52,16 @@ void Automobil::afisare() {
          << endl;
 }
 
-char* Automobil::getMarca() {
+char *Automobil::getMarca() {
     return marca;
 }
 
 void Automobil::setMarca(char *marca) {
-    Automobil::marca = marca;
+    if (this->marca) {
+        delete[] this->marca;
+    }
+    this->marca = new char[strlen(marca) + 1];
+    strcpy(this->marca, marca);
 }
 
 int Automobil::getCapacitate() {
@@ -66,4 +78,12 @@ double Automobil::getPret() {
 
 void Automobil::setPret(double pret) {
     Automobil::pret = pret;
+}
+
+double Automobil::getTVAPret() {
+    return this->pret + this->pret * TVA / 100;
+}
+
+int Automobil::getCount() {
+    return count;
 }

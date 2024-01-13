@@ -62,6 +62,10 @@ void f(Persoana ob) {
 
 void doEx1() {
     ifstream fin("automobile.in");
+    if (!fin.is_open()) {
+        cout << "Fisier inexistent\n";
+        return;
+    }
 
     int nr;
     fin >> nr;
@@ -72,19 +76,42 @@ void doEx1() {
     char marca[100];
     int capacitate;
     double pret;
-    int i = 0;
 
+    int i = 0;
     while (fin >> marca >> capacitate >> pret) {
 
         ta[i].setMarca(marca);
         ta[i].setCapacitate(capacitate);
         ta[i].setPret(pret);
 
-        ta[i].afisare();
         i++;
     }
-
     fin.close();
+
+    for (int i = 0; i < nr; i++) {
+        ta[i].afisare();
+    }
+
+    ofstream fout("pretTVA.csv");
+    if (!fout) {
+        cout << "Fisierul nu a putut fi deschis!\n";
+        return;
+    }
+
+
+    for (int i = 0; i < nr; i++) {
+        fout << "[" << ta[i].getMarca() << " | " << ta[i].getTVAPret() << "]\n";
+    }
+    fout.close();
+
+    cout << "Numarul de automobile: " << Automobil::getCount() << endl;
+
+    {
+     Automobil automobil;
+     cout << "Numarul de automobile: " << Automobil::getCount() << endl;
+    }
+    cout << "Numarul de automobile: " << Automobil::getCount() << endl;
+
 }
 
 void doEx2() {
