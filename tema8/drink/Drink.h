@@ -1,4 +1,4 @@
-#include "Product.h"
+#include "../product/Product.h"
 
 // Produs de baut
 class Drink : public Product {

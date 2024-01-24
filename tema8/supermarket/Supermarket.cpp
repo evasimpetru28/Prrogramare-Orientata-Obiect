@@ -1,8 +1,8 @@
 #include "Supermarket.h"
-#include "Product.h"
-#include "Grocery.h"
-#include "Cosmetic.h"
-#include "Drink.h"
+#include "../product/Product.h"
+#include "../grocery/Grocery.h"
+#include "../cosmetic/Cosmetic.h"
+#include "../drink/Drink.h"
 #include <fstream>
 #include <iostream>
 #include <cstring>

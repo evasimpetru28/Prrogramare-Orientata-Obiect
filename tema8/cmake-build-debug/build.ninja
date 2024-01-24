@@ -55,35 +55,35 @@ build CMakeFiles/tema8.dir/main.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home
   OBJECT_DIR = CMakeFiles/tema8.dir
   OBJECT_FILE_DIR = CMakeFiles/tema8.dir
 
-build CMakeFiles/tema8.dir/Grocery.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/Grocery.cpp || cmake_object_order_depends_target_tema8
-  DEP_FILE = CMakeFiles/tema8.dir/Grocery.cpp.o.d
+build CMakeFiles/tema8.dir/grocery/Grocery.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/grocery/Grocery.cpp || cmake_object_order_depends_target_tema8
+  DEP_FILE = CMakeFiles/tema8.dir/grocery/Grocery.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/tema8.dir
-  OBJECT_FILE_DIR = CMakeFiles/tema8.dir
+  OBJECT_FILE_DIR = CMakeFiles/tema8.dir/grocery
 
-build CMakeFiles/tema8.dir/Cosmetic.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/Cosmetic.cpp || cmake_object_order_depends_target_tema8
-  DEP_FILE = CMakeFiles/tema8.dir/Cosmetic.cpp.o.d
+build CMakeFiles/tema8.dir/cosmetic/Cosmetic.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/cosmetic/Cosmetic.cpp || cmake_object_order_depends_target_tema8
+  DEP_FILE = CMakeFiles/tema8.dir/cosmetic/Cosmetic.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/tema8.dir
-  OBJECT_FILE_DIR = CMakeFiles/tema8.dir
+  OBJECT_FILE_DIR = CMakeFiles/tema8.dir/cosmetic
 
-build CMakeFiles/tema8.dir/Drink.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/Drink.cpp || cmake_object_order_depends_target_tema8
-  DEP_FILE = CMakeFiles/tema8.dir/Drink.cpp.o.d
+build CMakeFiles/tema8.dir/drink/Drink.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/drink/Drink.cpp || cmake_object_order_depends_target_tema8
+  DEP_FILE = CMakeFiles/tema8.dir/drink/Drink.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/tema8.dir
-  OBJECT_FILE_DIR = CMakeFiles/tema8.dir
+  OBJECT_FILE_DIR = CMakeFiles/tema8.dir/drink
 
-build CMakeFiles/tema8.dir/Supermarket.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/Supermarket.cpp || cmake_object_order_depends_target_tema8
-  DEP_FILE = CMakeFiles/tema8.dir/Supermarket.cpp.o.d
+build CMakeFiles/tema8.dir/supermarket/Supermarket.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/supermarket/Supermarket.cpp || cmake_object_order_depends_target_tema8
+  DEP_FILE = CMakeFiles/tema8.dir/supermarket/Supermarket.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/tema8.dir
-  OBJECT_FILE_DIR = CMakeFiles/tema8.dir
+  OBJECT_FILE_DIR = CMakeFiles/tema8.dir/supermarket
 
-build CMakeFiles/tema8.dir/Product.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/Product.cpp || cmake_object_order_depends_target_tema8
-  DEP_FILE = CMakeFiles/tema8.dir/Product.cpp.o.d
+build CMakeFiles/tema8.dir/product/Product.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /home/eva/CLionProjects/POO/tema8/product/Product.cpp || cmake_object_order_depends_target_tema8
+  DEP_FILE = CMakeFiles/tema8.dir/product/Product.cpp.o.d
   FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/tema8.dir
-  OBJECT_FILE_DIR = CMakeFiles/tema8.dir
+  OBJECT_FILE_DIR = CMakeFiles/tema8.dir/product
 
 
 # =============================================================================
@@ -93,7 +93,7 @@ build CMakeFiles/tema8.dir/Product.cpp.o: CXX_COMPILER__tema8_unscanned_Debug /h
 #############################################
 # Link the executable tema8
 
-build tema8: CXX_EXECUTABLE_LINKER__tema8_Debug CMakeFiles/tema8.dir/main.cpp.o CMakeFiles/tema8.dir/Grocery.cpp.o CMakeFiles/tema8.dir/Cosmetic.cpp.o CMakeFiles/tema8.dir/Drink.cpp.o CMakeFiles/tema8.dir/Supermarket.cpp.o CMakeFiles/tema8.dir/Product.cpp.o
+build tema8: CXX_EXECUTABLE_LINKER__tema8_Debug CMakeFiles/tema8.dir/main.cpp.o CMakeFiles/tema8.dir/grocery/Grocery.cpp.o CMakeFiles/tema8.dir/cosmetic/Cosmetic.cpp.o CMakeFiles/tema8.dir/drink/Drink.cpp.o CMakeFiles/tema8.dir/supermarket/Supermarket.cpp.o CMakeFiles/tema8.dir/product/Product.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/tema8.dir
   POST_BUILD = :
