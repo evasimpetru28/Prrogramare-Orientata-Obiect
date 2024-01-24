@@ -6,6 +6,8 @@
  * Github repo: https://github.com/evasimpetru28/Prrogramare-Orientata-Obiect/tree/main/tema8
  * UML schema drive: https://drive.google.com/file/d/1Xs4yIHv6ZUM0SVEkajUlV0vXWba9tZhP/view?usp=sharing
  *
+ * Locatie fisier intrare: ./cmake-build-debug/products.in
+ *
  * */
 
 #include <cstring>
