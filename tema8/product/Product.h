@@ -41,10 +41,10 @@ public:
 
     double calculateSellingPrice() const;
 
+    void displayProductInfo();
+
     virtual char *getType() const = 0;
 
     virtual char *getUnit() const = 0;
-
-    void displayProductInfo();
 
 };

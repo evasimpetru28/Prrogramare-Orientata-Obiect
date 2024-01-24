@@ -1,3 +1,14 @@
+/*
+ * Simpetru Eva-Maria
+ * Grupa 208, ID
+ * Tema 8
+ *
+ * Github repo: https://github.com/evasimpetru28/Prrogramare-Orientata-Obiect/tree/main/tema8
+ * UML schema drive: https://drive.google.com/file/d/1Xs4yIHv6ZUM0SVEkajUlV0vXWba9tZhP/view?usp=sharing
+ *
+ * */
+
+
 #include <cstring>
 #include "supermarket/Supermarket.h"
 #include "grocery/Grocery.h"
