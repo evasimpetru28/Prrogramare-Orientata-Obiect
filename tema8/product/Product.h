@@ -4,7 +4,6 @@ class Product {
 private:
     char *code;         //cod_produs
     char *supplier;     //furnizor
-    char *unit;         //unitate_masura
     double cost;        //pret_furnizor
     double markup;      //adaos
     int quantity;       //cantitate
@@ -22,10 +21,6 @@ public:
 
     void setSupplier(char *supplier);
 
-    char *getUnit() const;
-
-    void setUnit(char *unit);
-
     double getCost() const;
 
     void setCost(double cost);
@@ -42,17 +37,14 @@ public:
 
     void setExpiryDate(char *expiryDate);
 
-    //Adăugare produs
-    void addProduct();
-
-    // Căutare produs de la un anumit furnizor
-    char *getProductBySupplier(char *supplier);
-
-    // Vânzare produs
     void sellProduct();
 
-    // Calculare preţ de vânzare
-    virtual double calculateSellingPrice() const = 0;
+    double calculateSellingPrice() const;
 
     virtual char *getType() const = 0;
+
+    virtual char *getUnit() const = 0;
+
+    void displayProductInfo();
+
 };

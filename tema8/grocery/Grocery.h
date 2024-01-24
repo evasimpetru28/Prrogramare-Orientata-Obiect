@@ -7,7 +7,7 @@ public:
 
     ~Grocery();
 
-    double calculateSellingPrice() const override;
+    char *getUnit() const override;
 
     char *getType() const override;
 };

@@ -1,4 +1,7 @@
 #include "Product.h"
+#include "../grocery/Grocery.h"
+#include "../cosmetic/Cosmetic.h"
+#include "../drink/Drink.h"
 #include <cstring>
 #include <iostream>
 
@@ -11,9 +14,6 @@ Product::Product() {
     this->supplier = new char[10];
     strcpy(this->supplier, "Supplier0");
 
-    this->unit = new char[4];
-    strcpy(this->unit, "buc");
-
     this->cost = 10.0;
     this->markup = 0.2;
     this->quantity = 5;
@@ -24,16 +24,12 @@ Product::Product() {
     cout << "Constructor Produs\n";
 }
 
-void Product::addProduct() {
-
-}
-
-char *Product::getProductBySupplier(char *supplier) {
-    return nullptr;
-}
-
 void Product::sellProduct() {
-    this->quantity = this->quantity - 1;
+    if (this->quantity > 0) {
+        this->quantity = this->quantity - 1;
+    } else {
+        cout << "-- EMPTY STOCK -- \n";
+    }
 }
 
 Product::~Product() {
@@ -42,9 +38,6 @@ Product::~Product() {
     }
     if (this->supplier) {
         delete[] supplier;
-    }
-    if (this->unit) {
-        delete[] unit;
     }
     if (this->expiryDate) {
         delete[] expiryDate;
@@ -74,18 +67,6 @@ void Product::setSupplier(char *supplier) {
     }
     this->supplier = new char[strlen(supplier) + 1];
     strcpy(this->supplier, supplier);
-}
-
-char *Product::getUnit() const {
-    return this->unit;
-}
-
-void Product::setUnit(char *unit) {
-    if (this->unit) {
-        delete[] this->unit;
-    }
-    this->unit = new char[strlen(unit) + 1];
-    strcpy(this->unit, unit);
 }
 
 double Product::getCost() const {
@@ -122,4 +103,14 @@ void Product::setExpiryDate(char *expiryDate) {
     }
     this->expiryDate = new char[strlen(expiryDate) + 1];
     strcpy(this->expiryDate, expiryDate);
+}
+
+void Product::displayProductInfo() {
+    cout << "[ Product Type: " << getType() << " | Code: " << code << " | Supplier: " << supplier << " | Unit: "
+         << " | Cost: " << cost << " | Markup: " << markup << " | Quantity: " << quantity << " | Expiry Date: "
+         << expiryDate << " ]" << endl;
+}
+
+double Product::calculateSellingPrice() const {
+    return this->getCost() * (1 + this->getMarkup());
 }

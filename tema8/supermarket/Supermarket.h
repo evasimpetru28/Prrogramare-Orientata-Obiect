@@ -6,13 +6,26 @@ using namespace std;
 
 class Supermarket {
 private:
+    int count;
     vector<Product *> products;
 
 public:
-    void loadProductsFromFile(const string& filename);
-
-    // Ştergere produse cu termen de valabilitate expirat
-    void removeExpiredProducts();
+    Supermarket();
 
     ~Supermarket();
+
+    int getCount() const;
+
+    void setCount(int count);
+
+    const vector<Product *> &getProducts() const;
+
+    void loadProductsFromFile(const string &filename);
+
+    void addProduct(Product *product);
+
+    void searchProductsBySupplier(char *supplier) const;
+
+    void removeExpiredProducts();
+
 };
