@@ -8,7 +8,6 @@
  *
  * */
 
-
 #include <cstring>
 #include "supermarket/Supermarket.h"
 #include "grocery/Grocery.h"
@@ -24,8 +23,8 @@ int main() {
 
     while (true) {
         int input;
-        cout
-                << "\n--------------------------------------------------------------------------------------------\n";
+
+        cout<< "\n--------------------------------------------------------------------------------------------\n";
         cout << "| Selectaţi operaţia:                                                                      |" << endl;
         cout << "| 1.     Adăugare produs.                                                                  |" << endl;
         cout << "| 2.     Căutare produs(e) de la un anumit furnizor.                                       |" << endl;
