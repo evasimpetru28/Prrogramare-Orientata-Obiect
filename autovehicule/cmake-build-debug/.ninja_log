@@ -1,0 +1,11 @@
+# ninja log v5
+156	188	1705237215322887201	autovehicule	d0b31b197c3b4e8
+0	146	1705237180394600844	CMakeFiles/autovehicule.dir/main.cpp.o	69f5d6cd4b2bec0c
+1	156	1705237215290886938	CMakeFiles/autovehicule.dir/Autoturism.cpp.o	b5febf515427664b
+0	168	1705236877800134850	CMakeFiles/autovehicule.dir/Autovehicul.cpp.o	4d0b33fea5373800
+0	170	1705237816847827522	CMakeFiles/autovehicule.dir/main.cpp.o	69f5d6cd4b2bec0c
+1	171	1705237816847827522	CMakeFiles/autovehicule.dir/TransportPersoane.cpp.o	670c5fffe058dfc9
+1	171	1705237816847827522	CMakeFiles/autovehicule.dir/Autoturism.cpp.o	b5febf515427664b
+171	205	1705237816879827781	autovehicule	42ca4a3d1c083abd
+0	166	1705238098078117406	CMakeFiles/autovehicule.dir/main.cpp.o	69f5d6cd4b2bec0c
+166	205	1705238098114117700	autovehicule	42ca4a3d1c083abd
